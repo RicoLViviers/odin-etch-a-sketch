@@ -1,21 +1,25 @@
 #grid-container
 {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    width: 600px;
+    height: 600px;
 }
 
 .grid-row
 {
-    flex-direction: column;
+    display: flex;
+    flex: 1;
+    min-height: 0;
 }
 
 .grid-square
 {
-    width: 30px;
-    height: 30px;
+    flex: 1;
+    min-width: 0;
+    box-sizing: border-box;
     background-color: white;
-    border-style: solid;
-    border-color: black;
+    border: 1px solid black;
 }
 
 .grid-square:hover
