@@ -26,16 +26,22 @@ let mySize = 16;
 const customSizeButton = document.getElementById("customSizeBtn");
 const gridContainer = document.createElement("div");
 
-gridContainer.id = 'grid-container';
+
 
 
 customSizeButton.addEventListener("click", () => {
     let input = prompt("Size, eg. 64: ");
-
-    mySize = input
-    removeBoard();
-    createBoard(mySize);
-    document.body.appendChild(gridContainer)
+    if (input >100)
+    {
+        console.log("Can't create anything larger than 100 for performance reasons");
+    }
+    else 
+    {
+        mySize = input
+        removeBoard();
+        createBoard(mySize);
+        document.body.appendChild(gridContainer)
+    }
 })
 
 
