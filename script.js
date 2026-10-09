@@ -27,6 +27,7 @@ const customSizeButton = document.getElementById("customSizeBtn");
 const gridContainer = document.createElement("div");
 
 
+gridContainer.id = 'grid-container';
 
 
 customSizeButton.addEventListener("click", () => {
