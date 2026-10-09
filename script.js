@@ -25,9 +25,29 @@ let mySize = 16;
 
 const customSizeButton = document.getElementById("customSizeBtn");
 const gridContainer = document.createElement("div");
+const gridItems = document.getElementsByClassName("grid-square");
 
+gridContainer.id = "grid-container";
 
-gridContainer.id = 'grid-container';
+let isMouseDown = false;
+
+gridContainer.addEventListener("dragstart", (event) => {
+    event.preventDefault();
+});
+
+document.addEventListener("mousedown", () => {
+    isMouseDown = true;
+})
+
+document.addEventListener("mouseup", () => {
+    isMouseDown = false;
+})
+
+gridContainer.addEventListener("mouseover", (event) => {
+    if (isMouseDown && event.target.classList.contains("grid-square")) {
+        event.target.style.backgroundColor = "black";
+    }
+});
 
 
 customSizeButton.addEventListener("click", () => {
